@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>How Do I Declare A Block in Objective-C?</title>
+  <title>How Do I Convert Certificates With OpenSSL?</title>
   <style>
     body {
       background-color: #002b36;
@@ -26,15 +26,15 @@
       font-weight: normal;
     }
 
-    .return {
+    .openssl {
       color: #2aa198;
     }
 
-    .name {
+    .file-in {
       color: #BC8800;
     }
 
-    .parameter-types, .parameters {
+    .file-out, .parameters {
       color: #7C9F00;
     }
 
@@ -88,56 +88,25 @@
       margin-top: 40px;
     }
   </style>
-  
+
 </head>
 
 <body>
-  <h1>How Do I Declare A Block in Objective-C?</h1>
+  <h1>How Do I Convert Certificates With OpenSSL?</h1>
 
   <div>
-    <h2>As a <strong>local variable</strong>:</h2>
+    <h2>Convert <strong>.crt (and private key) to .p12</strong>:</h2>
     <code>
-      <span class="return">returnType</span> (^<span class="name">blockName</span>)(<span class="parameter-types">parameterTypes</span>) = ^<span class="return">returnType</span>(<span class="parameters">parameters</span>) {...};
-    </code>
-  </div>
-
-  <div>
-    <h2>As a <strong>property</strong>:</h2>
-    <code>
-      @property (nonatomic, copy) <span class="return">returnType</span> (^<span class="name">blockName</span>)(<span class="parameter-types">parameterTypes</span>);
-    </code>
-  </div>
-
-  <div>
-    <h2>As a <strong>method parameter</strong>:</h2>
-    <code>
-      - (void)someMethodThatTakesABlock:(<span class="return">returnType</span> (^)(<span class="parameter-types">parameterTypes</span>))<span class="name">blockName</span>;
-    </code>
-  </div>
-
-  <div>
-    <h2>As an <strong>argument to a method call</strong>:</h2>
-    <code>
-      [someObject someMethodThatTakesABlock:^<span class="return">returnType</span> (<span class="parameters">parameters</span>) {...}];
-    </code>
-  </div>
-
-  <div>
-    <h2>As a <strong>typedef</strong>:</h2>
-    <code>
-      typedef <span class="return">returnType</span> (^<span class="name">TypeName</span>)(<span class="parameter-types">parameterTypes</span>);<br/>
-      <span class="name">TypeName</span> blockName = ^<span class="return">returnType</span>(<span class="parameters">parameters</span>) {...};
+      openssl <span class="openssl">pkcs12 -export -in</span> <span class="file-in">sample.crt</span> <span class="openssl">-inkey</span> <span class="file-in">sample.key</span> <span class="openssl">-out</span> <span class="file-out">sample.p12</span>
     </code>
   </div>
 
   <div class="disclaimer">
-    This site is not intended to be an exhaustive list of all possible uses of blocks.<br>
-    If you find yourself needing syntax not listed here, it is likely that a <strong>typedef</strong> would make your code more readable.<br>
-    <br>
-    Unable to access this site due to the profanity in the URL? <strong><a href="http://goshdarnblocksyntax.com">http://goshdarnblocksyntax.com</a></strong> is a more work-friendly mirror.
+    This site is not intended to be an exhaustive list of all possible commands.<br>
+    If you find yourself needing commands not listed here, simply create a pull request at <a href="https://github.com/hirschfl/fuckingopensslcommands.com">GitHub</a>.
   </div>
 
-  <footer>By <a href="http://lazerwalker.com">Mike Lazer-Walker</a>, who has a very bad memory for this sort of thing.</footer>
+  <footer>By <a href="https://github.com/hirschfl">Florian Hirschmann</a>, who has a very bad memory for this sort of thing. <br>Original idea and website design by <a href="http://lazerwalker.com">Mike Lazer-Walker</a>, who has a very bad memory for <a href="http://fuckingblocksyntax.com/">block syntax</a></footer>
 
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
