@@ -1,6 +1,6 @@
-Fucking Block Syntax
-=================
+Fucking OpenSSL Commands
+========================
 
-Because syntax is hard.
+Because commands are hard.
 
-http://fuckingblocksyntax.com
+fuckingopensslcommands.com
