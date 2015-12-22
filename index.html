@@ -95,9 +95,44 @@
   <h1>How Do I Convert Certificates With OpenSSL?</h1>
 
   <div>
+    <h2>Create a <strong>rsa key</strong>:</h2>
+    <code>
+      openssl <span class="openssl">genrsa <span class="openssl">-out</span> <span class="file-out">sample.key</span> <span class="openssl">4096</span>
+    </code>
+  </div>
+
+  <div>
     <h2>Convert <strong>.crt (and private key) to .p12</strong>:</h2>
     <code>
       openssl <span class="openssl">pkcs12 -export -in</span> <span class="file-in">sample.crt</span> <span class="openssl">-inkey</span> <span class="file-in">sample.key</span> <span class="openssl">-out</span> <span class="file-out">sample.p12</span>
+    </code>
+  </div>
+
+  <div>
+    <h2>Convert <strong>.pem to .der</strong>:</h2>
+    <code>
+      openssl <span class="openssl">x509 -outform der -in </span> <span class="file-in">sample.pem</span> <span class="openssl">-out</span> <span class="file-out">sample.der</span>
+    </code>
+  </div>
+
+  <div>
+    <h2>Convert <strong>.der to .pem</strong>:</h2>
+    <code>
+      openssl <span class="openssl">x509 -inform der -in </span> <span class="file-in">sample.der</span> <span class="openssl">-out</span> <span class="file-out">sample.pem</span>
+    </code>
+  </div>
+
+  <div>
+    <h2>Convert <strong>.p12 to .key</strong>:</h2>
+    <code>
+      openssl <span class="openssl">pkcs12 -in </span> <span class="file-in">sample.p12</span> <span class="openssl">-nocerts -out</span> <span class="file-out">sample.key</span>
+    </code>
+  </div>
+
+  <div>
+    <h2>Convert <strong>.p12 to .crt</strong>:</h2>
+    <code>
+      openssl <span class="openssl">pkcs12 -in </span> <span class="file-in">sample.p12</span> <span class="openssl">-clcerts -nokeys -out</span> <span class="file-out">sample.crt</span>
     </code>
   </div>
 
